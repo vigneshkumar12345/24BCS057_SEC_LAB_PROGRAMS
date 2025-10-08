@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Program Word & charater counter</title>
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: rgb(22, 216, 216);
+        }
+        textarea{
+            width: 1000px;
+            height: 150px;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            margin-bottom: 10px;
+        }
+        .counter{
+            font-size: 18px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h2>Main Program Word & charater counter</h2>
+    <textarea id="mainText" placeholder="start typing here...."></textarea>
+    <div class="counter">
+        charater:<span id="main char count">0</span>
+        <br>
+        Word:<span id="main Word count">0</span>
+    </div>
+    <script>
+        document.getElementById("mainText").addEventListener("input",function(){
+            const text=this.value;
+            document.getElementById("main char count").innerText=text.length;
+            const trimmed=text.trim();
+            const Wordcount=trimmed===""?0:trimmed.split(/\s+/).length;
+            document.getElementById("main Word count").innerText=Wordcount;       
+        });
+    </script>
+</body>
+</html>
